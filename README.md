@@ -42,7 +42,7 @@ This project consists of two web applications:
 ## Running the Project
 
 1. **Database setup**  
-   - The project uses an **H2 ambedded database**.  
+   - The project uses an **H2 embedded database**.  
    - Initialize the database by executing the SQL instructions contained in `MatchWeb/schema.sql`. This will create all necessary tables and insert sample data (including test users).  
 
 2. **Server setup**  
