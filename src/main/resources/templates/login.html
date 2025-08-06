@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+        <link th:href="@{/css/mycss.css}" rel="stylesheet">
+
+        <title>Login</title>
+        <link rel="icon" type="image/png" th:href="@{/logos/logo.png}">
+    </head>
+
+    <body class="d-flex flex-column min-vh-100">
+
+    <!-- Public Navigation Bar -->
+    <div th:replace="~{fragments :: public-navbar}"></div>
+
+    <main class="flex-grow-1">
+        <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+            <div class="row align-items-center g-lg-5 py-5">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Accedi a MatchWeb</h1>
+                    <p class="col-lg-10 fs-4">Vuoi compilare la tua schedina e puntare sui tuoi sport preferiti? Effettua l'accesso per accedere a tutte le funzionalità dell’app: gioca, segui le tue scommesse in tempo reale e non perdere nessuna occasione. Gioca, vinci e molto altro!</p>
+                </div>
+                <div class="col-md-10 mx-auto col-lg-5">
+                    <form method="post" th:action="@{/login}" class="p-4 p-md-5 bg-body-secondary">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="username" required>
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="password" required>
+                            <label for="password">Password</label>
+                        </div>
+
+                        <!-- buttons -->
+                        <div class="d-flex justify-content-center gap-3 mt-4 mb-2">
+                            <button type="submit" class="btn px-4 py-2 btn-lg btn-dark">Invia</button>
+                            <button type="reset" class="btn px-4 py-2 btn-lg btn-dark">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- News -->
+    <div th:replace="~{fragments :: news}"></div>
+
+    <!-- Footer -->
+    <div th:replace="~{fragments :: footer}"></div>
+
+    </body>
+</html>

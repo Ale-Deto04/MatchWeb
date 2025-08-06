@@ -1,0 +1,87 @@
+.svg-bg {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.svg-bg.podium-card{
+    padding-top: 3rem;
+}
+
+.card {
+    border-radius: 20px;
+}
+
+.card.index-card {
+    margin-bottom: 30px;
+}
+
+form {
+    border-radius: 20px;
+}
+
+.div-banner {
+    background-color: rgb(128, 197, 174);
+}
+
+.nav-link {
+    font-size: 1.4rem;
+}
+
+.nav-img {
+    width: auto;
+}
+
+.nav-img.banner {
+    height: 9.2rem;
+}
+
+.nav-img.title {
+    height: 1.9rem;
+}
+
+.c-item {
+    height: 44rem;
+}
+.c-img {
+    height: 100%;
+    object-fit: cover;
+}
+.highlight {
+    background-color: rgba(171, 165, 165, 0.401);
+    padding: 0.3em;
+    border-radius: 7px;
+}
+.card-img-top {
+    height: 16rem;
+    object-fit: cover;
+    filter: brightness(0.9);
+}
+
+.toast {
+    background-color: rgba(255, 255, 255, 1);
+    --bs-toast-border-radius: 20px;
+}
+
+.toast-header img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.img-container {
+    background-color: #e9ecef;
+}
+
+.error-banner{
+    background-color: rgba(244, 66, 66, 0.47);
+    height: 6rem;
+}
+.error-title{
+    color: rgb(239, 3, 3);
+}
+
+.alert {
+    width: 40rem;
+}

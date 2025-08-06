@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+        <link th:href="@{/css/mycss.css}" rel="stylesheet">
+
+        <title>Padel</title>
+        <link rel="icon" type="image/png" th:href="@{/logos/logo.png}">
+    </head>
+
+    <body class="d-flex flex-column min-vh-100">
+
+        <!-- Navigation Bar -->
+        <div th:if="${auth}">
+            <div th:replace="~{fragments :: user-navbar}"></div>
+        </div>
+        <div th:if="${!auth}">
+            <div th:replace="~{fragments :: public-navbar}"></div>
+        </div>
+
+        <main class="flex-grow-1 bg-light text-dark">
+            <div class="container py-5">
+
+                <div class="text-center mb-5">
+                    <h1 class="display-4">Scopri il Padel</h1>
+                    <p class="lead">Uno sport dinamico, divertente e sempre più amato in tutto il mondo.</p>
+                </div>
+
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-6">
+                        <h3>Cos'è il padel?</h3>
+                        <p>
+                            Il padel è uno sport di racchetta nato in Messico e molto diffuso in Spagna, Argentina e sempre più anche in Italia.
+                            Si gioca in doppio su un campo più piccolo del tennis, circondato da pareti che fanno parte del gioco.
+                            È facile da imparare e molto coinvolgente anche per i principianti.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="img-container rounded shadow-sm p-3 text-center">
+                            <img class="img-fluid rounded" th:src="@{/images/padel1.jpg}" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-center mb-5 flex-md-row-reverse">
+                    <div class="col-lg-6">
+                        <h3>Come si gioca?</h3>
+                        <p>
+                            Il padel si gioca in coppia, con una pallina simile a quella da tennis e racchette senza corde.
+                            La palla può rimbalzare sulle pareti dopo il primo rimbalzo a terra. I punti si contano come nel tennis, e la strategia è tanto importante quanto la tecnica.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="img-container rounded shadow-sm p-3 text-center">
+                            <img class="img-fluid rounded" th:src="@{/images/padel2.jpg}" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h3 class="mb-3">Curiosità</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">🔥 È lo sport in più rapida crescita in Europa negli ultimi anni.</li>
+                            <li class="list-group-item">🇪🇸 In Spagna è secondo solo al calcio per numero di praticanti.</li>
+                            <li class="list-group-item">🎾 I campi da padel sono più piccoli di quelli da tennis, ma richiedono agilità e riflessi pronti.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <h3 class="mb-3">Le squadre partecipanti</h3>
+                    <ul class="list-group list-group-flush list-group-numbered">
+                        <li class="list-group-item">Bari Paddle Warriors</li>
+                        <li class="list-group-item">Cagliari Racket Storm</li>
+                        <li class="list-group-item">Firenze Ace Club</li>
+                        <li class="list-group-item">Milano Smashers</li>
+                        <li class="list-group-item">Napoli Paddle Masters</li>
+                        <li class="list-group-item">Padel Titans Roma</li>
+                        <li class="list-group-item">Torino Net Kings</li>
+                        <li class="list-group-item">Verona Backhanders</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <!-- News -->
+        <div th:replace="~{fragments :: news}"></div>
+
+        <!-- Footer -->
+        <div th:replace="~{fragments :: footer}"></div>
+
+    </body>
+</html>

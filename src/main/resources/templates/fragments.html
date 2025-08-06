@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+    <body>
+
+        <!-- Public navbar -->
+        <div th:fragment="public-navbar">
+            <div style="width: 100%; z-index: 1040;">
+                <div class="div-banner py-1 text-center border-bottom">
+                    <img class="nav-img banner" th:src="@{/logos/banner_logo.png}" alt="banner">
+                </div>
+
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                    <div class="container-fluid">
+
+                        <!-- MatchWeb + Logo -->
+                        <a th:href="@{/index}" id="link-logo" class="navbar-brand d-flex">
+                            <img class="nav-img title me-2" th:src="@{/logos/navbar_logo.png}" alt="logo">
+                        </a>
+
+                        <!-- Collapse -->
+                        <button class="navbar-toggler"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#pnavbar"
+                                aria-controls="pnavbar"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <!-- Links -->
+                        <div class="collapse navbar-collapse" id="pnavbar">
+                            <ul class="navbar-nav ms-auto me-3">
+                                <li class="nav-item" id="nav-home">
+                                    <a th:href="@{/index}" id="link-home" class="nav-link">Home</a>
+                                </li>
+                                <li class="nav-item ms-3" id="nav-sponsor">
+                                    <a th:href="@{/sponsor}" id="link-sponsor" class="nav-link">Sponsor</a>
+                                </li>
+                                <li class="nav-item ms-3" id="nav-ratings">
+                                    <a th:href="@{/ratings}" id="link-ratings" class="nav-link">Recensioni</a>
+                                </li>
+                                <li class="nav-item ms-3" id="nav-news">
+                                    <a class="nav-link" role="button" data-bs-toggle="offcanvas" data-bs-target="#news-offcanvas" aria-controls="news-offcanvas">News</a>
+                                </li>
+                                <li class="nav-item ms-3" id="nav-login">
+                                    <a th:href="@{/login}" id="link-login" class="nav-link">Login</a>
+                                </li>
+                                <li class="nav-item ms-3" id="nav-signup">
+                                    <a th:href="@{/signup}" id="link-signup" class="nav-link">Sign up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="news-offcanvas" aria-labelledby="news-offcanvasLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="news-offcanvasLabel">News del momento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul id="news-list" class="list-group"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- User navbar -->
+        <div th:fragment="user-navbar">
+            <div style="width: 100%; z-index: 1040;">
+                <div class="div-banner py-1 text-center border-bottom">
+                    <img class="nav-img banner" th:src="@{/logos/banner_logo.png}" alt="banner">
+                </div>
+
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                    <div class="container-fluid">
+
+                        <!-- Logo -->
+                        <a th:href="@{/index}" class="navbar-brand d-flex">
+                            <img class="nav-img title me-2" th:src="@{/logos/navbar_logo.png}" alt="logo">
+                        </a>
+
+                        <!-- Collapse -->
+                        <button class="navbar-toggler"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#unavbar"
+                                aria-controls="unavbar"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <!-- Links -->
+                        <div class="collapse navbar-collapse" id="unavbar">
+                            <ul class="navbar-nav ms-auto me-3">
+                                <li class="nav-item">
+                                    <a th:href="@{/index}" class="nav-link">Home</a>
+                                </li>
+                                <li class="nav-item ms-3">
+                                    <a th:href="@{/sponsor}" class="nav-link">Sponsor</a>
+                                </li>
+                                <li class="nav-item ms-3">
+                                    <a th:href="@{/ratings}" class="nav-link">Recensioni</a>
+                                </li>
+                                <li class="nav-item ms-3">
+                                    <a th:href="@{/dashboard}" class="nav-link">Dashboard</a>
+                                </li>
+                                <li class="nav-item ms-3 dropdown">
+                                    <a id="account-dropdown" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Profilo
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" th:href="@{/account}">Account</a></li>
+                                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#changePwModal">Cambia password</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item ms-3">
+                                    <a th:href="@{/confirm_logout}" class="nav-link">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="changePwModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Cambia Password</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" th:action="@{/change_password}" class="needs-validation" id="my-form" novalidate>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control" id="pw" name="pw" placeholder="Password" required>
+                                    <label for="pw">Password</label>
+                                    <div class="invalid-feedback">*Campo obbligatorio</div>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control" id="confirm-pw" name="confirm-pw" placeholder="Confirm password" required>
+                                    <label for="confirm-pw">Conferma password</label>
+                                    <div class="invalid-feedback">*Le password non coincidono</div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                                    <button type="submit" class="btn btn-primary">Cambia password</button>
+                                </div>
+                            </form>
+                            <script th:src="@{/js/form-validation.js}" defer></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- News Toast-->
+        <div th:fragment="news">
+            <div id="news-url" th:data-url="@{/news}"></div>
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <div id="news-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <img th:src="@{/logos/logo.png}" class="me-2" alt="logo">
+                        <strong class="me-auto">News</strong>
+                        <small id="news-date">MM-DD-YYYY</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body" id="news-text">
+                        Default news text
+                    </div>
+                </div>
+            </div>
+            <script th:src="@{/js/news-management.js}" defer></script>
+        </div>
+
+        <!-- Alert Toast -->
+        <div th:fragment="alert">
+            <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                <div id="alert-toast" class="toast border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div id="alert-message" class="toast-body">
+                            Default message
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+            <script th:src="@{/js/utils.js}" defer></script>
+        </div>
+
+        <!-- Footer -->
+        <div th:fragment="footer">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center p-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                    <a th:href="@{/index}" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Company">
+                        <img th:src="@{/logos/logo.png}" alt="Logo Azienda" width="50rem" height="auto" class="me-2">
+                    </a>
+                    <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2025 MatchWeb, Inc</span>
+                </div>
+
+                <!-- Dettagli -->
+                <div class="col-md-4 d-flex flex-column align-items-end">
+                    <span class="text-body-secondary">Partita IVA: 58463248975</span>
+                    <span class="text-body-secondary">Indirizzo: Via San Gennaro 81, NA, 80013</span>
+                    <span class="text-body-secondary">Telefono: +39 045 541 348</span>
+                    <span class="text-body-secondary">Email: matchweb.company@gmail.com</span>
+                </div>
+            </footer>
+        </div>
+
+    </body>
+</html>
