@@ -30,12 +30,12 @@ This project consists of two web applications:
 - Security implemented with Spring Security (authentication, authorization, CSRF protection, SQL injection and XSS prevention)
 - User reviews and rating system
 
-## Key Features of Team03_REST
+## Key Features of REST_App
 - Generates fictitious teams, match schedules, and results
 - Provides data via REST endpoints in JSON format
 
 ## Technologies Used
-- Java, Spring Framework (MVC, Security, REST)
+- Java, Spring Framework (MVC, Security, REST, Cloud Openfeign)
 - Thymeleaf and Bootstrap for frontend
 - Maven for build and dependency management
 
