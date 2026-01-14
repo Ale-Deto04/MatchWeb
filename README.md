@@ -16,11 +16,16 @@ This project consists of two web applications:
 - **REST_App**: A backend REST service providing fictitious teams, schedules, and random results for Cricket matches via a REST APIs.
 
 ## Repository Structure
+
+```bash
+MatchWeb/
+   ├── Matchweb/
+   ├── REST/
+   └── project_report.pdf
+```
 - `Matchweb/` - Source code and resources for MatchWeb
 - `REST/` - Source code and resources for REST_app
-- `LICENSE` - Project license
-- `README.md` - This file
-- Additional configuration files and folders as needed
+- `project_report.pdf` - Final report
 
 ---
 
