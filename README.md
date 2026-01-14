@@ -1,9 +1,9 @@
 # MatchWeb
-A full-stack web application developed as part of a university course, simulating a sports championship with the ability for registered users to create and manage betting slips (schedine).
+A **full-stack web application** developed as part of the _"Introduction to Web Programming"_ university course, simulating a sports championship with the ability for registered users to create and manage betting slips (schedine).
 
 ## Project Context and Documentation
 
-This project was developed as part of the academic coursework for the "Introduzione alla Programmazione Web" course.  
+This project was developed as part of the academic coursework for the _"Introduction to Web Programming"_ course.  
 Its primary purpose is educational, aimed at learning and applying web programming concepts and technologies.  
 
 For a detailed explanation of the project design, implementation choices, and architecture, please refer to the comprehensive project report included in the repository (`project_report.pdf`).  
