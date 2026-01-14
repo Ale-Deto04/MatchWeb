@@ -65,7 +65,7 @@ This project consists of two web applications:
    - Access the main application via the URL configured for **Team03_MatchWeb** (e.g., `http://localhost:8080/Team03_MatchWeb`).  
 
 > [!WARNING]
-> If REST_app is not available or not running, MatchWeb will crash due to failed backend connections.
+> If **REST_App** is not available or not running, MatchWeb will crash due to failed backend connections.
  
 ---
 
