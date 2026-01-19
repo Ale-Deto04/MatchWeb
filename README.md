@@ -21,6 +21,8 @@ This project consists of two web applications:
 MatchWeb/
    ├── Matchweb/
    ├── REST/
+   ├── LICENSE
+   ├── README.md
    └── project_report.pdf
 ```
 - `Matchweb/` - Source code and resources for MatchWeb
